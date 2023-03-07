@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build -t openwms/org.openwms.wms.movements:latest .
