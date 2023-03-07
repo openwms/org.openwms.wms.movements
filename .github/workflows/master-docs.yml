@@ -14,7 +14,6 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     name: Build Microservice Docs
-    services:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
