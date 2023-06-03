@@ -463,7 +463,7 @@
         <profile>
             <id>enterprise</id>
             <properties>
-                <org.openwms.wms.movements.ui.version>1.0.0-ENTERPRISE-SNAPSHOT</org.openwms.wms.movements.ui.version>
+                <org.openwms.wms.movements.ui.version>1.0.0-SNAPSHOT</org.openwms.wms.movements.ui.version>
             </properties>
             <distributionManagement>
                 <repository>
