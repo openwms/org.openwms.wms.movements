@@ -11,7 +11,7 @@
     </parent>
     <artifactId>org.openwms.wms.movements</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>OpenWMS.org WMS: Movements Services</name>
+    <name>OpenWMS.org WMS: Movements Service</name>
     <url>https://openwms.github.io/${project.artifactId}/index.html</url>
 
     <issueManagement>
@@ -74,6 +74,7 @@
         <putaway.version>1.0.0-SNAPSHOT</putaway.version>
         <servo-core.version>0.12.21</servo-core.version>
         <spring-cloud-dependencies.version>2021.0.7</spring-cloud-dependencies.version>
+        <wms.movements.ui.version>1.0.0-SNAPSHOT</wms.movements.ui.version>
     </properties>
 
     <reporting>
@@ -462,9 +463,6 @@
     <profiles>
         <profile>
             <id>enterprise</id>
-            <properties>
-                <org.openwms.wms.movements.ui.version>1.0.0-SNAPSHOT</org.openwms.wms.movements.ui.version>
-            </properties>
             <distributionManagement>
                 <repository>
                     <id>interface21-releases</id>
@@ -485,7 +483,7 @@
                 <dependency>
                     <groupId>org.openwms</groupId>
                     <artifactId>org.openwms.wms.movements.ui</artifactId>
-                    <version>${org.openwms.wms.movements.ui.version}</version>
+                    <version>${wms.movements.ui.version}</version>
                 </dependency>
             </dependencies>
             <repositories>
