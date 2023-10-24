@@ -8,5 +8,5 @@ This service manages manual `Movements` in _manual_ warehouses. These kind of ta
 [![Join the chat at https://gitter.im/openwms/org.openwms](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/openwms/org.openwms?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Details
-Read more about the details and strategies of the WMS Movements Service on the [wiki pages](https://wiki.butan092.startdedicated.de/projects/wms-movements-service/wiki),
+Read more about the details and strategies of the WMS Movements Service on the [wiki pages](https://wiki.openwms.cloud/projects/wms-movements-service/wiki),
 or on the [website](https://openwms.github.io/org.openwms.wms.movements/) of the service.

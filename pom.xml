@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.openwms</groupId>
         <artifactId>org.openwms.parent</artifactId>
-        <version>24</version>
+        <version>25</version>
         <relativePath />
     </parent>
     <artifactId>org.openwms.wms.movements</artifactId>
@@ -64,14 +64,14 @@
     </ciManagement>
 
     <properties>
-        <common.version>2.0.0</common.version>
-        <core.units.version>0.5.0</core.units.version>
-        <core.version>2.0.0</core.version>
+        <common.version>2.1.0-SNAPSHOT</common.version>
+        <core.units.version>0.5.1-SNAPSHOT</core.units.version>
+        <core.version>2.1.0-SNAPSHOT</core.version>
         <guava.version>30.0-jre</guava.version>
         <movement-lib.version>1.0.0-SNAPSHOT</movement-lib.version>
         <objenesis.version>3.2</objenesis.version>
         <servo-core.version>0.12.21</servo-core.version>
-        <spring-cloud-dependencies.version>2021.0.7</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2021.0.8</spring-cloud-dependencies.version>
         <wms.movements.ui.version>1.0.0-SNAPSHOT</wms.movements.ui.version>
     </properties>
 
@@ -442,12 +442,12 @@
                 <repository>
                     <id>interface21-releases</id>
                     <name>OpenWMS.org Release Repository</name>
-                    <url>https://repo.butan092.startdedicated.de/repository/maven-releases</url>
+                    <url>https://repo.openwms.cloud/repository/maven-releases</url>
                 </repository>
                 <snapshotRepository>
                     <id>interface21-snapshots</id>
                     <name>OpenWMS.org Snapshot Repository</name>
-                    <url>https://repo.butan092.startdedicated.de/repository/maven-snapshots</url>
+                    <url>https://repo.openwms.cloud/repository/maven-snapshots</url>
                 </snapshotRepository>
                 <site>
                     <id>site</id>
@@ -465,7 +465,7 @@
                 <repository>
                     <id>interface21-snapshots</id>
                     <name>Interface21.io Snapshot Repository</name>
-                    <url>https://repo.butan092.startdedicated.de/repository/maven-snapshots</url>
+                    <url>https://repo.openwms.cloud/repository/maven-snapshots</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
@@ -476,7 +476,7 @@
                 <repository>
                     <id>interface21-releases</id>
                     <name>Interface21.io Release Repository</name>
-                    <url>https://repo.butan092.startdedicated.de/repository/maven-releases</url>
+                    <url>https://repo.openwms.cloud/repository/maven-releases</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
