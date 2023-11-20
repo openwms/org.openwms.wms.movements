@@ -68,11 +68,11 @@
         <core.units.version>0.5.1-SNAPSHOT</core.units.version>
         <core.version>2.1.0-SNAPSHOT</core.version>
         <guava.version>30.0-jre</guava.version>
-        <movement-lib.version>1.0.0-SNAPSHOT</movement-lib.version>
+        <movements-lib.version>1.0.0-SNAPSHOT</movements-lib.version>
+        <movements.ui.version>1.0.0-SNAPSHOT</movements.ui.version>
         <objenesis.version>3.2</objenesis.version>
         <servo-core.version>0.12.21</servo-core.version>
         <spring-cloud-dependencies.version>2021.0.8</spring-cloud-dependencies.version>
-        <wms.movements.ui.version>1.0.0-SNAPSHOT</wms.movements.ui.version>
     </properties>
 
     <reporting>
@@ -165,7 +165,7 @@
             <dependency>
                 <groupId>org.openwms</groupId>
                 <artifactId>org.openwms.wms.movements.lib</artifactId>
-                <version>${movement-lib.version}</version>
+                <version>${movements-lib.version}</version>
                 <classifier>all</classifier>
             </dependency>
             <dependency>
@@ -251,6 +251,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -458,7 +464,7 @@
                 <dependency>
                     <groupId>org.openwms</groupId>
                     <artifactId>org.openwms.wms.movements.ui</artifactId>
-                    <version>${wms.movements.ui.version}</version>
+                    <version>${movements.ui.version}</version>
                 </dependency>
             </dependencies>
             <repositories>
