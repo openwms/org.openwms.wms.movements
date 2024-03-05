@@ -64,6 +64,7 @@
     </ciManagement>
 
     <properties>
+        <checker-qual.version>3.33.0</checker-qual.version>
         <common.version>2.1.0-SNAPSHOT</common.version>
         <core.units.version>0.5.1-SNAPSHOT</core.units.version>
         <core.version>2.1.0-SNAPSHOT</core.version>
@@ -138,6 +139,12 @@
                 <groupId>com.netflix.servo</groupId>
                 <artifactId>servo-core</artifactId>
                 <version>${servo-core.version}</version>
+            </dependency>
+            <dependency>
+                <!-- Clash between Guava and postgres driver -->
+                <groupId>org.checkerframework</groupId>
+                <artifactId>checker-qual</artifactId>
+                <version>${checker-qual.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.openwms</groupId>
@@ -248,6 +255,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
