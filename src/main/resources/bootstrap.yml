@@ -5,10 +5,6 @@ spring:
     user:
       name: user
       password: sa
-  jackson:
-    date-format: "yyyy-MM-dd HH:mm:ss" # Only matches Dates no Instants!
-    deserialization:
-      read-date-timestamps-as-nanoseconds: false
   jpa:
     mapping-resources:
       - META-INF/movements-orm.xml
@@ -20,11 +16,6 @@ spring:
     show-sql: false
   main:
     allow-bean-definition-overriding: true
-  mvc:
-    format:
-      date-time: "yyyy-MM-dd'T'HH:mm:ssXXX" # Must match the pattern how of @JsonFormat field annotation patterns
-      date: yyyy-MM-dd
-      time: HH:mm:ss
   zipkin:
     sender:
       type: web
@@ -42,8 +33,8 @@ owms:
     url: http://user:sa@localhost:8761
     zone: ${owms.eureka.url}/eureka/
   srv:
-    protocol: http
     hostname: localhost
+    protocol: http
   movements:
     states:
       new: INACTIVE
@@ -59,15 +50,6 @@ eureka:
       defaultZone: ${owms.eureka.zone} # Must be camelCase
   instance:
     hostname: ${owms.srv.hostname}
-    secure-port-enabled: false
-    non-secure-port-enabled: true
-    metadata-map:
-      config-protocol: http # The protocol used to access the config server
-      username: ${spring.security.user.name}
-      password: ${spring.security.user.password}
-      protocol: ${owms.srv.protocol}
-      zone: ${owms.eureka.zone}
-    prefer-ip-address: true
     # Request a lease with a validity of 5 seconds. If until then the
     # lease has not been renewed, it expires and the Eureka server can evict it.
     # Default: 90s
@@ -77,6 +59,15 @@ eureka:
     # In this case every 2 seconds. Use this only for development / debugging. In production use the ...
     # Default: 30s
     lease-renewal-interval-in-seconds:    2
+    metadata-map:
+      config-protocol: http # The protocol used to access the config server
+      username: ${spring.security.user.name}
+      password: ${spring.security.user.password}
+      protocol: ${owms.srv.protocol}
+      zone: ${owms.eureka.zone}
+    non-secure-port-enabled: true
+    prefer-ip-address: true
+    secure-port-enabled: false
 
 info:
   scm-url: "@scm.url@"
@@ -152,27 +143,6 @@ owms:
   movements:
     exchange-name: movements
     serialization: json
-
----
-spring:
-  config:
-    activate:
-      on-profile: HEROKU
-  main:
-    banner-mode: "OFF"
-
-owms:
-  srv:
-    protocol: https
-    hostname: openwms-tms-movements.herokuapp.com
-
-eureka:
-  instance:
-    secure-port-enabled: true
-    non-secure-port-enabled: false
-    statusPageUrl: ${owms.srv.protocol}://${owms.srv.hostname}:${server.port}/actuator/info
-    healthCheckUrl: ${owms.srv.protocol}://${owms.srv.hostname}:${server.port}/actuator/health
-    homePageUrl: ${owms.srv.protocol}://${owms.srv.hostname}:${server.port}/actuator/
 
 ---
 spring:
