@@ -67,10 +67,9 @@
         <common.version>2.1.0-SNAPSHOT</common.version>
         <core.units.version>0.5.1-SNAPSHOT</core.units.version>
         <core.version>2.1.0-SNAPSHOT</core.version>
-        <guava.version>30.0-jre</guava.version>
+        <guava.version>32.0.0-jre</guava.version>
         <movements-lib.version>1.0.0-SNAPSHOT</movements-lib.version>
         <movements.ui.version>1.0.0-SNAPSHOT</movements.ui.version>
-        <objenesis.version>3.2</objenesis.version>
         <servo-core.version>0.12.21</servo-core.version>
         <spring-cloud-dependencies.version>2021.0.8</spring-cloud-dependencies.version>
     </properties>
@@ -139,12 +138,6 @@
                 <groupId>com.netflix.servo</groupId>
                 <artifactId>servo-core</artifactId>
                 <version>${servo-core.version}</version>
-            </dependency>
-            <dependency>
-                <!-- Clash between spring-boot-starter-test and dozer -->
-                <groupId>org.objenesis</groupId>
-                <artifactId>objenesis</artifactId>
-                <version>${objenesis.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.openwms</groupId>
@@ -242,6 +235,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <dependency>
@@ -251,12 +248,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-io</groupId>
-                    <artifactId>commons-io</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -306,12 +297,6 @@
         <dependency>
             <groupId>com.github.dozermapper</groupId>
             <artifactId>dozer-core</artifactId>
-        </dependency>
-        <dependency>
-            <!-- Need to upgrade Guava from version 11 because of CVE -->
-            <!-- Required by eureka-client -->
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
