@@ -39,6 +39,7 @@
         <core.version>3.0.0</core.version>
         <error_prone_annotations.version>2.28.0</error_prone_annotations.version>
         <httpclient.version>4.5.14</httpclient.version>
+        <joda-time.version>2.12.7</joda-time.version>
         <movements-lib.version>1.0.0-SNAPSHOT</movements-lib.version>
         <movements.ui.version>1.0.0-SNAPSHOT</movements.ui.version>
         <spring-cloud-dependencies.version>2024.0.1</spring-cloud-dependencies.version>
@@ -109,6 +110,12 @@
                 <groupId>com.google.errorprone</groupId>
                 <artifactId>error_prone_annotations</artifactId>
                 <version>${error_prone_annotations.version}</version>
+            </dependency>
+            <dependency>
+                <!-- Mismatch between Eureka Client and spring-cloud-starter-bus-amqp -->
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
             </dependency>
             <dependency>
                 <!-- Internal clash in Spring Cloud -->
